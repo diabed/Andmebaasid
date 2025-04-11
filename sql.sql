@@ -8,10 +8,10 @@
 --SQL:
 CREATE DATABASE nazaruk;
 --Object Explorer on vaja pidevalt uuendada käsitsi!
-USE nazaruk;
+vali hiirega andmebaasi
 --tabeli loomine
 CREATE TABLE opilane(
-opilaneID int Primary Key identity(1,1),
+opilaneID int Primary Key AUTO_INCREMENT,
 eesnimi varchar(25),
 perenimi varchar(30) Unique,
 synniaeg date,
