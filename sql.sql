@@ -97,12 +97,3 @@ oppeaine varchar(20)
 select * from hinne;
 alter table hinne
 ADD foreign key (opilaneID) references opilane(opilaneID);
-
-insert into hinne
-( opilaneID, hinne, oppeaine)
-values ('4','4', 'Andmebaasid');
-
-select * from opilane;
-
-select * from hinne join opilane
-on hinne.opilaneID=opilane.opilaneID;
