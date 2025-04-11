@@ -105,3 +105,18 @@ select * from opilane;
 
 select * from hinne join opilane
 on hinne.opilaneID=opilane.opilaneID;
+
+create table opetaja(
+opetajaID int PRIMARY KEY AUTO_INCREMENT,
+    nimi varchar(20),
+    perenimi varchar(20),
+    telefon int 
+);
+
+insert into ryhm(ryhm, osakond, opetajaID)
+Values ('TITpv23', 'IT', 3), ('KRRpv24','Rätsepp', 1), ('TITpv24', 'IT', 2);
+
+insert into opetaja(nimi, perenimi, telefon)
+Values ('Jekaterina', 'Rätsep', 37256239572),
+('Irina', 'Merkulova', 37256385895),
+('Mikhail', 'Agapov', 880084675349572);
