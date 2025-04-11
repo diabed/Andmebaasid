@@ -15,6 +15,7 @@ Näited: vanus, palk, temperatuur, kaal, pikkus jne
 4. Foreign Key - saab kasutada ainult teise tabeli väärtused
 5. CHECK - saab sisestada ainult check määratud väärtusi CHECK (mees, naine)
 
-![image](https://github.com/user-attachments/assets/5e9fe8df-bfa7-4923-b9f9-d2f77ee40893)
+![image](https://github.com/user-attachments/assets/82bbfb10-03d6-47f7-9c2c-3035df30a390)
+
 
 
