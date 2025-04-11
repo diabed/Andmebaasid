@@ -106,3 +106,24 @@ select * from opilane;
 select * from hinne join opilane
 on hinne.opilaneID=opilane.opilaneID;
 
+Create table opetaja(
+opetajaID int Primary Key identity(1,1),
+nimi varchar(20),
+perenimi varchar(20),
+telefon text
+);
+
+select * from opetaja;
+
+insert into opetaja 
+(nimi, perenimi, telefon)
+Values ('Jekaterina', 'Rätsep', '37256239572'),
+('Irina', 'Merkulova', '37256385895'),
+('Mikhail', 'Agapov', '3957192');
+
+drop table opetaja;
+
+alter table ryhm
+ADD foreign key (opetajaID) references opetaja(opetajaID);
+
+alter table ryhm ADD opetajaID int;
