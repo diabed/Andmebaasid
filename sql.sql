@@ -102,7 +102,7 @@ create table opetaja(
 opetajaID int PRIMARY KEY AUTO_INCREMENT,
     nimi varchar(20),
     perenimi varchar(20),
-    telefon int 
+    telefon text
 );
 
 insert into ryhm(ryhm, osakond, opetajaID)
