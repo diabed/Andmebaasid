@@ -54,3 +54,11 @@ end;
 exec uuendaLinn 0.5;
 drop procedure uuendaLinn;
 update linnad set elanikeARV=20000;
+
+create procedure keskminearv
+as
+begin
+select avg(elanikeARV) AS 'Keskmine elanikearv' from linnad;
+end;
+
+exec keskminearv;
