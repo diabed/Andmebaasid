@@ -112,3 +112,24 @@ insert into opetaja(nimi, perenimi, telefon)
 Values ('Jekaterina', 'Rätsep', 37256239572),
 ('Irina', 'Merkulova', 37256385895),
 ('Mikhail', 'Agapov', 880084675349572);
+
+--protseduur
+BEGIN
+SELECT filmNimetus, pikkus
+FROM film
+WHERE filmNimetus LIKE concat(taht,'%');
+END
+
+--protseduur, mis lisab
+BEGIN
+set @sqltegevus=concat('ALTER TABLE ', tabelinimi, ' ADD COLUMN ', veerunimi, ' ', tyyp);
+PREPARE stmt FROM @sqltegevus;
+EXECUTE stmt;
+END
+
+--protseduur, mis kustutab
+BEGIN
+set @sqltegevus=concat('ALTER TABLE ', tabelinimi, ' Drop COLUMN ', veerunimi);
+PREPARE stmt FROM @sqltegevus;
+EXECUTE stmt;
+END
