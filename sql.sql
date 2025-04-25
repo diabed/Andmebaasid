@@ -127,3 +127,71 @@ alter table ryhm
 ADD foreign key (opetajaID) references opetaja(opetajaID);
 
 alter table ryhm ADD opetajaID int;
+
+create database nazaruk;
+use nazaruk;
+create table loomad(
+loomaID int primary key identity (1,1),
+nimi varchar(25),
+liik varchar(25),
+vanus varchar(10)
+);
+insert into loomad(nimi, liik, vanus)
+values ('Rebane', 'Kiskja', '10-12'),
+('Pruunkaru', 'Kiskja', '30-35')
+drop table loomad;
+select * from loomad;
+--kustutamise protseduur
+create procedure loomadekustutamine
+@id int
+as
+begin
+select * from loomad;
+delete from loomad where loomaID=@id;
+select * from loomad;
+end;
+exec loomadekustutamine 4;
+insert into loomad(nimi, liik, vanus)
+values ('Pruunkaru', 'Kiskja', '30-35')
+--lisamise protseduur
+create procedure loomadelisamine
+@nimi varchar(30),
+@liik varchar(25),
+@vanus varchar(10)
+as
+begin
+insert into loomad(nimi, liik, vanus)
+values (@nimi, @liik, @vanus);
+select * from loomad;
+end;
+exec loomadelisamine 'Lõvi', 'Kiskja', '20-30';
+--uuendamise protseduur
+create procedure uuendamine
+as
+begin
+select * from loomad;
+update loomad set vanus=52;
+select * from loomad;
+end;
+drop procedure loomadelisamine;
+exec uuendamine;
+
+create procedure jagamine
+@arv decimal(5,2)
+as
+begin
+select * from loomad;
+update loomad set vanus=vanus*@arv;
+select * from loomad;
+end;
+exec jagamine 0.5;
+
+create procedure vanemadloomad
+@vanus int 
+as
+begin
+select * from loomad
+where vanus >=@vanus;
+select * from loomad;
+end;
+exec vanemadloomad 53;
