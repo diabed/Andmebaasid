@@ -195,3 +195,22 @@ where vanus >=@vanus;
 select * from loomad;
 end;
 exec vanemadloomad 53;
+
+create database nazaruk;
+use nazaruk;
+
+create table kontroll(
+id int primary key identity(1,1),
+test varchar(25));
+insert into kontroll2(test)
+values('kontroll test2');
+select * from kontroll2;
+select * from kontroll;
+--loome kasutaja LOGIN kaudu
+--määrame SQL käsuga opilane õigused
+--lubamine
+GRANT insert on kontroll to opilanenazaruk;
+GRANT delete on kontroll2 to opilanenazaruk;
+--keelamine
+deny update on kontroll to opilanenazaruk;
+deny update on kontroll2 to opilanenazaruk;
