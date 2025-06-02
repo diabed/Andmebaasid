@@ -19,3 +19,4 @@ Näited: vanus, palk, temperatuur, kaal, pikkus jne
 
 
 
+https://nikolainazaruk23.thkit.ee/wp
